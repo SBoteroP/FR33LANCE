@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 export function Servicios() {
   const [showDetails, setShowDetails] = useState(false); // variable de estado para controlar si se muestra la información detallada o no
   const [selectedService, setSelectedService] = useState(null); // variable de estado para almacenar el servicio seleccionado
+  const [searchTerm, setSearchTerm] = useState("");
 
   const services = [
     {
@@ -49,10 +50,25 @@ export function Servicios() {
     setSelectedService(null);
     setShowDetails(false);
   }
+  function handleSearchTermChange(event) {
+    setSearchTerm(event.target.value);
+  } 
 
   return (
+    <div className="flex-1 flex flex-col items-center justify-center">
+  <div className="mb-4 w-72">
+    <input
+      type="text"
+      placeholder="Buscar servicio..."
+      className="w-full border-gray-300 border rounded-md px-4 py-2"
+      value={searchTerm}
+      onChange={handleSearchTermChange}
+    />
+  </div>
     <div className="flex-1 flex flex-wrap items-center justify-center">
-      {services.map((service) => (
+      {services.filter((service) =>
+    service.name.toLowerCase().includes(searchTerm.toLowerCase())
+  ).map((service) => (
         <div
           key={service.id}
           className="m-2 p-2 w-72 h-56 bg-white shadow-md rounded-lg flex flex-col items-center justify-center"
@@ -65,12 +81,12 @@ export function Servicios() {
             Ver detalles
           </button>
 
-<Link to="/agendas" className="mt-2 px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-green-600 focus:outline-none">
-                contratar
+            <Link to="/agendas" className="mt-2 px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-green-600 focus:outline-none">
+                Contratar
             </Link>
         </div>
       ))}
-
+</div>
       {showDetails && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
           <div className="absolute inset-0 bg-gray-800 opacity-50"></div>
