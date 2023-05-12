@@ -64,13 +64,10 @@ export function Servicios() {
           >
             Ver detalles
           </button>
-          <button
-  className="mt-2 px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-green-600 focus:outline-none"
-  onClick={() => alert("Servicio contratado")}
->
-  Contratar servicio
-</button>
 
+<Link to="/agendas" className="mt-2 px-4 py-2 rounded-md text-white bg-blue-500 hover:bg-green-600 focus:outline-none">
+                contratar
+            </Link>
         </div>
       ))}
 
