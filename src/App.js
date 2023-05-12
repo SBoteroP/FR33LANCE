@@ -4,7 +4,7 @@ import { Register } from "./components/Register";
 import { Login } from "./components/Login";
 import { Servicios } from "./components/Servicios";
 import { AuthProvider } from "./context/authContext";
-import { agendas } from "./components/agendas";
+import { Agendas } from "./components/Agendas";
 
 function App() {
   
@@ -16,7 +16,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/agendas" element={<agendas />} />
+          <Route path="/Agendas" element={<Agendas />} />
         </Routes>
       </AuthProvider>
     </div >
