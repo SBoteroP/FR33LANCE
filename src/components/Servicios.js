@@ -12,21 +12,24 @@ export function Servicios() {
     {
       id: 1,
       provider: "Juan Alberto Rodriguez",
-      name: "Plomería",
+      name: "Los maestros de la plomeria",
+      service: "Plomeria",
       description: "Reparación de fugas de agua y gas",
       price: 180000,
     },
     {
       id: 2,
       provider: "Luisa Ramirez",
-      name: "Limpieza",
+      name: "LimpiARTE",
+      service: "Limpieza",
       description: "Servicio de limpieza profunda para hogares y oficinas",
       price: 250000,
     },
     {
         id: 3,
         provider: "Carlos Hernandez",
-        name: "Carpintería",
+        name: "Carpinteria a medida",
+        service: "Carpinteria",
         description:
           "Construcción de estructuras de madera para exteriores",
         price: 280000,
@@ -34,7 +37,8 @@ export function Servicios() {
       {
         id: 4,
         provider: "Ana Maria Fernandez",
-        name: "Pintura",
+        name: "Pintu-Fast",
+        service: "Pintura",
         description:
           "Aplicación de pintura decorativa para paredes interiores",
         price: 150000,
@@ -67,7 +71,7 @@ export function Servicios() {
   </div>
     <div className="flex-1 flex flex-wrap items-center justify-center">
       {services.filter((service) =>
-    service.name.toLowerCase().includes(searchTerm.toLowerCase())
+    service.service.toLowerCase().includes(searchTerm.toLowerCase())
   ).map((service) => (
         <div
           key={service.id}
@@ -99,11 +103,14 @@ export function Servicios() {
             </button>
             <h2 className="text-xl font-bold mb-2">{selectedService.name}</h2>
             <p className="mb-2">
+              <strong>Servicio:</strong> {selectedService.service}
+            </p>
+            <p className="mb-2">
               <strong>Prestador:</strong> {selectedService.provider}
             </p>
             <p className="mb-2">
               <strong>Descripción:</strong> {selectedService.description}
-            </p>
+            </p>        
             <p className="mb-2">
               <strong>Costo:</strong> ${selectedService.price.toLocaleString()}
             </p>
