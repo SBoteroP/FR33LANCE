@@ -80,7 +80,7 @@ export function Login() {
   Login
 </button>
 
-<Link to="/Agregar_servicio" className="bg-green-400 hover:bg-green-500 text-white font-bold py-2 px-4 rounded proveedor-btn">
+<Link to="/Agregar_servicio" className="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded proveedor-btn">
   Registrar servicio
 </Link>
 
