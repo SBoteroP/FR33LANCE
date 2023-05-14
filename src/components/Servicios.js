@@ -43,6 +43,77 @@ export function Servicios() {
           "Aplicación de pintura decorativa para paredes interiores",
         price: 150000,
       },
+      {
+        id: 5,
+        provider: "Oscar Danilo Rodriguez",
+        name: "Testigos de JAVA",
+        service: "Tecnico",
+        description:
+          "Servicio de asistencia técnica, dedicado a instalar, reparar y hacer el mantenimiento de aparatos electrodomésticos",
+        price: 200000,
+      },
+      {
+        id: 6,
+        provider: "Nicolas Paez",
+        name: "Bella Moda",
+        service: "Peluqueria",
+        description:
+          "Servicios de cortes de pelo, tintes, peinados, tratamientos capilares y, en ocasiones, servicios de barbería",
+        price: 50000,
+      },
+      {
+        id: 7,
+        provider: "Francisca Reyes",
+        name: "The nails palace",
+        service: "Manicuria",
+        description:
+          "Tratamiento de belleza cosmético para las uñas y manos",
+        price: 150000,
+      },
+      {
+        id: 8,
+        provider: "Ricardo Quevedo",
+        name: "Testigos de JAVA",
+        service: "Lavanderia",
+        description:
+          "Recogida y entrega de prendas, el lavado, el secado, el planchado, el doblado y la clasificación de cada prenda",
+        price: 40000,
+      },
+      {
+        id: 9,
+        provider: "Santaigo Romero",
+        name: "Testigos de JAVA",
+        service: "Mensajeria",
+        description:
+          "Servicio de mensajeria personalizado",
+        price: 20000,
+      },
+      {
+        id: 10,
+        provider: "Daniel Martins",
+        name: "Cuisine à la maison",
+        service: "Cocina",
+        description:
+          "Preparación y cocción de los alimentos cumpliendo con estrictas normas sanitarias en la manipulación de los alimentos",
+        price: 250000,
+      },
+      {
+        id: 11,
+        provider: "Nicolas de la Cruz",
+        name: "Smart body",
+        service: "Fitness",
+        description: "Servicio de acondicionamiento fisico personalizado",
+        price: 180000,
+      },
+      {
+        id: 12,
+        provider: "Alejandro Bustamante",
+        name: "La limpieza de alejo",
+        service: "Limpieza",
+        description: "Servicio de limpieza profunda para hogares y oficinas",
+        price: 250000,
+      },
+      
   ];
 
   function handleServiceClick(service) {
