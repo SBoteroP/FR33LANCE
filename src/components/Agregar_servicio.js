@@ -56,7 +56,6 @@ export function Agregar_servicio() {
         setError(error.message);
       }
     };
-  
 
   return (
 
@@ -144,9 +143,8 @@ export function Agregar_servicio() {
   Registrar
 </button>
 
-
-
       </form>
     </div>
   )
 }
+
