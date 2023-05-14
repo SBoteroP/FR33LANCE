@@ -13,14 +13,6 @@ export function Agregar_servicio() {
     const [prestador, setprestador] = useState('');
     const [descripcion, setdescripcion] = useState('');
     const [precio, setprecio] = useState('');
-    const navigate = useNavigate();
-    const [error, setError] = useState();
-    const [user, setUser] = useState({
-      email: "",
-      password: "",
-    });
-  
-    const { login } = useAuth();
 
     const handleidChange= (event) => {
         setid(event.target.value);
@@ -45,17 +37,6 @@ export function Agregar_servicio() {
     const handlenombreChange = (event) => {
       setnombre(event.target.value);
     };
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      setError('');
-  
-      try {
-        await login(user.email, user.password);
-        navigate('/');
-      } catch (error) {
-        setError(error.message);
-      }
-    };
   
 
   return (
@@ -76,11 +57,11 @@ export function Agregar_servicio() {
           <input
             type="nombre"
             name="nombre"
-            placeholder="Nombre servicio"
+            placeholder="youremail@site.com"
             className="shadow appearence- none border rounder 
              w-fully py-2 px-3 text-gray-777 leading-tight 
              focus:outline-none focus:shadow-outline"
-            onChange={handlenombreChange}
+            onChange={handleChange}
           />
         </div>
 
@@ -90,11 +71,11 @@ export function Agregar_servicio() {
           <input
             type="servicio"
             name="servicio"
-            placeholder="Tipo del servicio"
+            placeholder="youremail@site.com"
             className="shadow appearence- none border rounder 
              w-fully py-2 px-3 text-gray-777 leading-tight 
              focus:outline-none focus:shadow-outline"
-            onChange={handleservicioChange}
+            onChange={handleChange}
           />
         </div>
 
@@ -104,11 +85,11 @@ export function Agregar_servicio() {
           <input
             type="prestador"
             name="prestador"
-            placeholder="Nombre dueño del servicio"
+            placeholder="youremail@site.com"
             className="shadow appearence- none border rounder 
              w-fully py-2 px-3 text-gray-777 leading-tight 
              focus:outline-none focus:shadow-outline"
-            onChange={handleprestadorChange}
+            onChange={handleChange}
           />
         </div>
 
@@ -118,11 +99,11 @@ export function Agregar_servicio() {
           <input
             type="descripcion"
             name="descripcion"
-            placeholder="Descripcion servicio"
+            placeholder="youremail@site.com"
             className="shadow appearence- none border rounder 
              w-fully py-2 px-3 text-gray-777 leading-tight 
              focus:outline-none focus:shadow-outline"
-            onChange={handledescripcionChange}
+            onChange={handleChange}
           />
         </div>
 
@@ -132,13 +113,18 @@ export function Agregar_servicio() {
           <input
             type="precio"
             name="precio"
-            placeholder="$"
+            placeholder="youremail@site.com"
             className="shadow appearence- none border rounder 
              w-fully py-2 px-3 text-gray-777 leading-tight 
              focus:outline-none focus:shadow-outline"
-            onChange={handleprecioChange}
+            onChange={handleChange}
           />
         </div>
+
+        <p className="my-4 text-sm flex justify-between px-3">
+          Aún no estás registrado? <Link to='/register' className="font-bold"> Registrarse
+          </Link>
+        </p>
 
         <button className="bg-green-700 hover:bg-green-500 text-white font-bold py-2 px-4 rounded cliente-btn">
   Registrar
