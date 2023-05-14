@@ -5,6 +5,7 @@ import { Login } from "./components/Login";
 import { Servicios } from "./components/Servicios";
 import { AuthProvider } from "./context/authContext";
 import { Agendas } from "./components/Agendas";
+import { Agregar_servicio } from "./components/Agregar_servicio";
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/Agendas" element={<Agendas />} />
+          <Route path="/Agregar_servicio" element={<Agregar_servicio />} />
         </Routes>
       </AuthProvider>
     </div >
