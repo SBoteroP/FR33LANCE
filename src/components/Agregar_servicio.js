@@ -45,6 +45,12 @@ export function Agregar_servicio() {
     };
   
     return (
+      <div style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+       <div>
+  <img src="https://media.istockphoto.com/id/1252680975/photo/happy-african-builder-standing-pleased-posing-on-white-studio-background.jpg?s=612x612&w=0&k=20&c=1Uka9d-qjdgmEL9emV5aMbdxFKPNBWSSNxu1E9dcliw=" alt="Obrero feliz" />
+</div> 
+    <div className="bg-blue-500 text-white p-4">Unase a nuestros expertos!
+    </div>
       <form onSubmit={handleSubmit} className="flex items-center justify-center h-screen">
   <div className="w-1/2">
     <div className="bg-green-500 p-4 rounded-lg shadow-md">
@@ -74,5 +80,6 @@ export function Agregar_servicio() {
     <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
   </div>
       </form>
+      </div>
     );
   }
