@@ -46,24 +46,33 @@ export function Agregar_servicio() {
   
     return (
       <form onSubmit={handleSubmit} className="flex items-center justify-center h-screen">
-        <div className="w-1/2">
-          <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">nombre:</label>
-          <input id="name-input" nombre="nombre" type="text" value={nombre} onChange={handlenombreChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-          <label htmlFor="servicio-input" className="mb-1 font-bold text-gray-700">servicio:</label>
-          <input id="servicio-input" name="servicio" type="servicio" value={servicio} onChange={handleservicioChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-          <label htmlFor="id-input" className="mb-1 font-bold text-gray-700">id:</label>
-          <input id="id-input" name="id" type="text" value={id} onChange={handleidChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-         
-          <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">prestador:</label>
-          <input id="name-input" name="prestador" type="text" value={prestador} onChange={handleprestadorChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-         
-          <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">descripcion:</label>
-          <input id="name-input" name="descripcion" type="text" value={descripcion} onChange={handledescripcionChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-          
-          <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">precio:</label>
-          <input id="name-input" name="precio" type="text" value={precio} onChange={handleprecioChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
-          <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
-        </div>
+  <div className="w-1/2">
+    <div className="bg-green-500 p-4 rounded-lg shadow-md">
+      <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">nombre:</label>
+      <input id="name-input" nombre="nombre" type="text" value={nombre} onChange={handlenombreChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
+    </div>
+    <div className="bg-green-500 p-4 rounded-lg shadow-md">
+      <label htmlFor="servicio-input" className="mb-1 font-bold text-gray-700">servicio:</label>
+      <input id="servicio-input" name="servicio" type="servicio" value={servicio} onChange={handleservicioChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
+    </div>
+    <div className="bg-green-500 p-4 rounded-lg shadow-md">
+      <label htmlFor="id-input" className="mb-1 font-bold text-gray-700">id:</label>
+      <input id="id-input" name="id" type="text" value={id} onChange={handleidChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
+    </div>
+    <div className="bg-green-500 p-4 rounded-lg shadow-md">
+      <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">prestador:</label>
+      <input id="name-input" name="prestador" type="text" value={prestador} onChange={handleprestadorChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
+    </div>
+    <div className="bg-green-500 p-4 rounded-lg shadow-md">
+      <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">descripcion:</label>
+      <input id="name-input" name="descripcion" type="text" value={descripcion} onChange={handledescripcionChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
+    </div>
+    <div className="bg-green-500 p-4 rounded-lg shadow-md">
+      <label htmlFor="name-input" className="mb-1 font-bold text-gray-700">precio:</label>
+      <input id="name-input" name="precio" type="text" value={precio} onChange={handleprecioChange} className="px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 mb-4" />
+    </div>
+    <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Submit</button>
+  </div>
       </form>
     );
   }
