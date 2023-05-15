@@ -4,6 +4,7 @@ import { useAuth } from "../context/authContext";
 import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 export function ShoppingCart() {
   const [products, setProducts] = useState([
@@ -39,9 +40,15 @@ export function ShoppingCart() {
 
   const navigate = useNavigate();
 
-  const handleCheckout = () => {
-    // TODO: handle checkout logic
-    navigate("/checkout");
+  const HandleCheckout = () => {
+    // Calculate total amount
+    const total = cart.reduce(
+      (acc, curr) => acc + curr.price * curr.quantity,
+      0
+    );
+
+    // Navigate to Checkout and pass total as prop
+    navigate("/Checkout", { state: { total } });
   };
 
   return (
@@ -99,7 +106,7 @@ export function ShoppingCart() {
       <div className="flex justify-center my-4">
         <button
           className="bg-blue-500 text-white py-2 px-4 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
-          onClick={handleCheckout}
+          onClick={HandleCheckout}
         >
           Checkout
         </button>
