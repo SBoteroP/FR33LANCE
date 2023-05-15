@@ -63,9 +63,9 @@ export function ShoppingCart() {
       >
         <thead>
           <tr className="bg-blue-500 text-white">
-            <th className="py-3 px-4 text-left">Product</th>
-            <th className="py-3 px-4 text-center">Price</th>
-            <th className="py-3 px-4 text-center">Quantity</th>
+            <th className="py-3 px-4 text-left">Producto</th>
+            <th className="py-3 px-4 text-center">Precio</th>
+            <th className="py-3 px-4 text-center">Cantidad</th>
             <th className="py-3 px-4 text-center"></th>
           </tr>
         </thead>
@@ -96,7 +96,7 @@ export function ShoppingCart() {
                   className="rounded-full bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
                   onClick={() => removeFromCart(product)}
                 >
-                  Remove
+                  Remover
                 </button>
               </td>
             </tr>
