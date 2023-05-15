@@ -2,18 +2,21 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import { useAuth } from "../context/authContext";
 import { Link } from "react-router-dom";
-import ReactDOM from 'react-dom';
-import React from 'react';
+import ReactDOM from "react-dom";
+import React from "react";
 
 export function Agendas() {
-  const [agendas, setAgendas] = useState([    { mes: "Junio", dia: "28", hora: "2:00", isChecked: false },    { mes: "Julio", dia: "1", hora: "11:00", isChecked: false },  ]);
+  const [agendas, setAgendas] = useState([
+    { mes: "Junio", dia: "28", hora: "2:00", isChecked: false },
+    { mes: "Julio", dia: "1", hora: "11:00", isChecked: false },
+  ]);
 
   const addAgenda = () => {
     const newAgenda = {
       mes: "Agosto",
       dia: "15",
       hora: "15:30",
-      isChecked: false
+      isChecked: false,
     };
     setAgendas([...agendas, newAgenda]);
   };
@@ -28,33 +31,83 @@ export function Agendas() {
     const updatedAgendas = [...agendas];
     updatedAgendas[index].isChecked = !updatedAgendas[index].isChecked;
     setAgendas(updatedAgendas);
-  }
+  };
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center">
-      <table style={{ borderCollapse: "collapse", width: "100%", maxWidth: "800px",backgroundColor: "white",borderRadius: "30px" }}>
+      <table
+        style={{
+          borderCollapse: "collapse",
+          width: "100%",
+          maxWidth: "800px",
+          backgroundColor: "white",
+          borderRadius: "30px",
+        }}
+      >
         <thead>
           <tr>
-            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">Mes</th>
-            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">Dia</th>
-            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">Hora</th>
-            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">Seleccionar</th>
+            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">
+              Mes
+            </th>
+            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">
+              Dia
+            </th>
+            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">
+              Hora
+            </th>
+            <th className="text-lg font-bold bg-blue-500 text-white border-black border py-2 px-4 text-center">
+              Seleccionar
+            </th>
           </tr>
         </thead>
         <tbody>
           {agendas.map((agenda, index) => (
             <tr key={index}>
-              <td style={{ border: "1px solid black", padding: "8px", textAlign: "center" }}>{agenda.mes}</td>
-              <td style={{ border: "1px solid black", padding: "8px", textAlign: "center" }}>{agenda.dia}</td>
-              <td style={{ border: "1px solid black", padding: "8px", textAlign: "center" }}>{agenda.hora}</td>
-              <td style={{ border: "1px solid black", padding: "8px", textAlign: "center" }}>
-                <input type="checkbox" checked={agenda.isChecked} onChange={() => handleCheck(index)} />
+              <td
+                style={{
+                  border: "1px solid black",
+                  padding: "8px",
+                  textAlign: "center",
+                }}
+              >
+                {agenda.mes}
+              </td>
+              <td
+                style={{
+                  border: "1px solid black",
+                  padding: "8px",
+                  textAlign: "center",
+                }}
+              >
+                {agenda.dia}
+              </td>
+              <td
+                style={{
+                  border: "1px solid black",
+                  padding: "8px",
+                  textAlign: "center",
+                }}
+              >
+                {agenda.hora}
+              </td>
+              <td
+                style={{
+                  border: "1px solid black",
+                  padding: "8px",
+                  textAlign: "center",
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={agenda.isChecked}
+                  onChange={() => handleCheck(index)}
+                />
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <button 
+      <button
         style={{
           position: "absolute",
           left: "50%",
@@ -62,10 +115,12 @@ export function Agendas() {
           transform: "translateX(-50%)",
         }}
         className="mt-4 mb-2 px-4 py-2 rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none"
-        onClick={addAgenda}>Agregar agenda
+        onClick={addAgenda}
+      >
+        Agregar agenda
       </button>
 
-      <button 
+      <button
         style={{
           position: "absolute",
           left: "50%",
@@ -79,12 +134,17 @@ export function Agendas() {
       </button>
 
       {BotonPresionado && (
-        <p style={{ position: "absolute", left: "50%", bottom: 100, transform: "translateX(-50%)" }}>
+        <p
+          style={{
+            position: "absolute",
+            left: "50%",
+            bottom: 100,
+            transform: "translateX(-50%)",
+          }}
+        >
           Confirmacion exitosa!
         </p>
       )}
-
-
     </div>
   );
 }

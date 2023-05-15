@@ -9,7 +9,7 @@ export function Checkout() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [paymentMethod, setPaymentMethod] = useState("paypal");
+  const [paymentMethod, setPaymentMethod] = useState("creditCard");
   const [cardNumber, setCardNumber] = useState("");
   const [cardExpDate, setCardExpDate] = useState("");
   const [cardCVV, setCardCVV] = useState("");
