@@ -5,12 +5,12 @@ import { Login } from "./components/Login";
 import { Servicios } from "./components/Servicios";
 import { AuthProvider } from "./context/authContext";
 import { Agendas } from "./components/Agendas";
+import { ShoppingCart } from "./components/ShoppingCart";
 import { Agregar_servicio } from "./components/Agregar_servicio";
 
 function App() {
-  
   return (
-    <div className="bg-slate-300 h-screen text-black flex" >
+    <div className="bg-slate-300 h-screen text-black flex">
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,11 +18,12 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/Agendas" element={<Agendas />} />
+          <Route path="/ShoppingCart" element={<ShoppingCart />} />
           <Route path="/Agregar_servicio" element={<Agregar_servicio />} />
         </Routes>
       </AuthProvider>
-    </div >
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
