@@ -71,10 +71,17 @@ export function Home() {
             Servicios
           </Link>
           <Link
+<<<<<<< HEAD
             to="/agregar_servicio"
             className="bg-gradient-to-r from-purple-700 to-purple-500 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8"
           >
             Registrar servicio
+=======
+            to="/Appointments"
+            class="bg-gradient-to-r from-yellow-500 to-yellow-300 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8"
+          >
+            Mis Citas
+>>>>>>> 3c4fc1decd7ed48bf59ce595d6eacc8cb7fcb1d6
           </Link>
           
           <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8">
