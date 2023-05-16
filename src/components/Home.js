@@ -86,10 +86,12 @@ export function Home() {
           >
             Registrar servicio
           </Link>
-
-          <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-12 px-8 rounded-full text-3xl font-bold shadow-lg ml-8">
-            Más información
-          </button>
+          
+          <Link to="/Informacion">
+  <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8">
+    Sugerencias
+  </button>
+</Link>
         </div>
       </section>
       {/*Footer*/}
