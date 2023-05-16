@@ -5,7 +5,7 @@ import { Login } from "./components/Login";
 import { Servicios } from "./components/Servicios";
 import { AuthProvider } from "./context/authContext";
 import { Agendas } from "./components/Agendas";
-import { ShoppingCart } from "./components/ShoppingCart";
+import { Appointments } from "./components/Appointments";
 import { Agregar_servicio } from "./components/Agregar_servicio";
 import { Checkout } from "./components/Checkout";
 
@@ -19,7 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/Agendas" element={<Agendas />} />
-          <Route path="/ShoppingCart" element={<ShoppingCart />} />
+          <Route path="/Appointments" element={<Appointments />} />
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/Agregar_servicio" element={<Agregar_servicio />} />
         </Routes>

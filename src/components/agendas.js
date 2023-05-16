@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, Link, useLocation } from "react-router-dom";
 import { useAuth } from "../context/authContext";
-import { Link } from "react-router-dom";
 import ReactDOM from "react-dom";
 import React from "react";
 
@@ -11,19 +10,13 @@ export function Agendas() {
     { mes: "Julio", dia: "1", hora: "11:00", isChecked: false },
   ]);
 
-  const addAgenda = () => {
-    const newAgenda = {
-      mes: "Agosto",
-      dia: "15",
-      hora: "15:30",
-      isChecked: false,
-    };
-    setAgendas([...agendas, newAgenda]);
-  };
-
   const [BotonPresionado, setBotonPresionado] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
+    const total = 0;
+    // Navigate to Checkout and pass total as prop
+    navigate("/Checkout", { state: { total } });
     setBotonPresionado(true);
   };
 
@@ -107,18 +100,6 @@ export function Agendas() {
           ))}
         </tbody>
       </table>
-      <button
-        style={{
-          position: "absolute",
-          left: "50%",
-          bottom: 150,
-          transform: "translateX(-50%)",
-        }}
-        className="mt-4 mb-2 px-4 py-2 rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none"
-        onClick={addAgenda}
-      >
-        Agregar agenda
-      </button>
 
       <button
         style={{

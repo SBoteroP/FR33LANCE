@@ -63,10 +63,10 @@ export function Home() {
             Servicios
           </Link>
           <Link
-            to="/shoppingcart"
+            to="/Appointments"
             class="bg-gradient-to-r from-yellow-500 to-yellow-300 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8"
           >
-            Carrito
+            Mis Citas
           </Link>
           <button class="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8">
             Más información
