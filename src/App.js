@@ -19,11 +19,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/Agendas" element={<Agendas />} />
-<<<<<<< HEAD
           <Route path="/appointments" element={<Appointments />} />
-=======
-          <Route path="/Appointments" element={<Appointments />} />
->>>>>>> 3c4fc1decd7ed48bf59ce595d6eacc8cb7fcb1d6
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/agregar_servicio" element={<Agregar_servicio />} />
         </Routes>

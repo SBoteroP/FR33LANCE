@@ -63,8 +63,4 @@ export function Appointments({ clientId }) {
   );
 }
 
-<<<<<<< HEAD
 export default Appointments;
-=======
-export default Appointments;
->>>>>>> 3c4fc1decd7ed48bf59ce595d6eacc8cb7fcb1d6
