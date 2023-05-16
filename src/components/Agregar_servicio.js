@@ -21,7 +21,7 @@ export const Agregar_servicio = () => {
 
   const addService = async (values) => {
     const randomNumber = getRandomNumber(1, 500000);
-    await setDoc(doc(db, "servicio", randomNumber.toString()), values);
+    await setDoc(doc(db, "servicios", randomNumber.toString()), values);
   };
 
   const handleSubmit = (e) => {
