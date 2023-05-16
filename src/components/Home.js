@@ -36,12 +36,12 @@ export function Home() {
               </svg>
             </a>
           </div>
-          <i className="material-icons text-gray-500 absolute top-4 right-12 px-4 py-2 rounded-lg transition-all mx-44 my-2 mr-34">shopping_cart</i>
+          <i className="material-icons text-gray-500 absolute top-4 right-12 px-4 py-2 rounded-lg transition-all mx-44 my-2 mr-34">event</i>
           <Link
-            to="/shoppingcart"
+            to="/appointments"
             className="absolute top-4 right-14 px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:bg-green-500 transition-all mx-24 my-2"
           >
-            Carrito
+            Mis Citas
           </Link>
           <i className="material-icons text-gray-500 absolute top-4 right-4  px-4 py-2 rounded-lg transition-all mx-20 my-2 ">exit_to_app</i>
           <button
@@ -71,7 +71,7 @@ export function Home() {
             Servicios
           </Link>
           <Link
-            to="/Agregar_servicio"
+            to="/agregar_servicio"
             className="bg-gradient-to-r from-purple-700 to-purple-500 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8"
           >
             Registrar servicio
