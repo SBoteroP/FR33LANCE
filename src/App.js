@@ -8,6 +8,7 @@ import { Agendas } from "./components/Agendas";
 import { Appointments } from "./components/Appointments";
 import { Agregar_servicio } from "./components/Agregar_servicio";
 import { Checkout } from "./components/Checkout";
+import {Informacion} from "./components/Informacion";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path="/appointments" element={<Appointments />} />
           <Route path="/Checkout" element={<Checkout />} />
           <Route path="/agregar_servicio" element={<Agregar_servicio />} />
+          <Route path="/informacion" element={<Informacion />} />
         </Routes>
       </AuthProvider>
     </div>
