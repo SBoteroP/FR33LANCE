@@ -7,6 +7,9 @@ export function Servicios() {
   const [showDetails, setShowDetails] = useState(false); // variable de estado para controlar si se muestra la información detallada o no
   const [selectedService, setSelectedService] = useState(null); // variable de estado para almacenar el servicio seleccionado
   const [searchTerm, setSearchTerm] = useState("");
+  const [servicio, setServicio] = useState();
+
+
 
   const services = [
     {

@@ -14,14 +14,17 @@ export function AuthProvider({ children }) {
 
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [email, setEmail] = useState(null)
 
     const signup = async (email, password) => {
         const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
         console.log(userCredentials);
+        setEmail(email);
     }
     const login = async (email, password) => {
         const userCredentials = await signInWithEmailAndPassword(auth, email, password);
         console.log(userCredentials);
+        setEmail(email);
     }
 
     const logout = () => signOut(auth)
@@ -33,6 +36,6 @@ export function AuthProvider({ children }) {
         })
     }, [])
 
-    return <authContext.Provider value={{ signup, login, user, logout, loading }}>{children}</authContext.Provider>;
+    return <authContext.Provider value={{ signup, login, user, logout, loading, email }}>{children}</authContext.Provider>;
 
 }
