@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { firebaseConfig } from "../firebase";
-import firebase from "/firebase/app";
+/*import { firebaseConfig } from "../firebase";
 import "firebase/auth";
 import "firebase/firestore";
+import { initializeApp, auth, firestore } from "firebase/app";
 
 // Initialize Firebase app
 if (!firebase.apps.length) {
@@ -10,27 +10,26 @@ if (!firebase.apps.length) {
 }
 
 // Get authentication instance
-const auth = firebase.auth();
+const firebaseAuth = firebase.auth();
 
 // Get Firestore instance
 const db = firebase.firestore();
 
 // Create a reference to the clients collection
 const clientsRef = db.collection("clients");
-
+*/
 export function MyAccount() {
   const [client, setClient] = useState(null);
-
+  /*
   useEffect(() => {
-    const userId = auth.currentUser.uid;
+    const userId = firebaseAuth.currentUser.uid;
     const clientRef = clientsRef.doc(userId);
     clientRef.get().then((doc) => {
       if (doc.exists) {
         setClient(doc.data());
       }
     });
-  }, []);
-
+  }, []);*/
   return (
     <div className="my-account">
       <h1 className="my-account__title">My Account</h1>
