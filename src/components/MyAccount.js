@@ -1,83 +1,73 @@
 import React, { useState, useEffect } from "react";
+import { firebaseConfig } from "../firebase";
+import firebase from "/firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
+
+// Initialize Firebase app
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+// Get authentication instance
+const auth = firebase.auth();
+
+// Get Firestore instance
+const db = firebase.firestore();
+
+// Create a reference to the clients collection
+const clientsRef = db.collection("clients");
 
 export function MyAccount() {
-  const [user, setUser] = useState({});
-  const [orders, setOrders] = useState([]);
+  const [client, setClient] = useState(null);
 
-  /*useEffect(() => {
-    // Call API to get user details
-    getUserDetails().then((userDetails) => {
-      setUser(userDetails);
+  useEffect(() => {
+    const userId = auth.currentUser.uid;
+    const clientRef = clientsRef.doc(userId);
+    clientRef.get().then((doc) => {
+      if (doc.exists) {
+        setClient(doc.data());
+      }
     });
-
-    // Call API to get user orders
-    getUserOrders().then((userOrders) => {
-      setOrders(userOrders);
-    });
-  }, []);*/
+  }, []);
 
   return (
     <div className="my-account">
       <h1 className="my-account__title">My Account</h1>
-      <div className="my-account__user-details">
-        <h2 className="my-account__section-title">User Details</h2>
-        <div className="my-account__user-details-grid">
-          <div className="my-account__user-detail">
-            <label htmlFor="name" className="my-account__label">
-              Name:
-            </label>
-            <p id="name" className="my-account__value">
-              {user.name}
-            </p>
-          </div>
-          <div className="my-account__user-detail">
-            <label htmlFor="email" className="my-account__label">
-              Email:
-            </label>
-            <p id="email" className="my-account__value">
-              {user.email}
-            </p>
-          </div>
-          <div className="my-account__user-detail">
-            <label htmlFor="address" className="my-account__label">
-              Address:
-            </label>
-            <p id="address" className="my-account__value">
-              {user.address}
-            </p>
-          </div>
-          <div className="my-account__user-detail">
-            <label htmlFor="phone" className="my-account__label">
-              Phone:
-            </label>
-            <p id="phone" className="my-account__value">
-              {user.phone}
-            </p>
+      {client ? (
+        <div className="my-account__user-details">
+          <h2 className="my-account__section-title">User Details</h2>
+          <div className="my-account__user-details-grid">
+            <div className="my-account__user-detail">
+              <label htmlFor="name" className="my-account__label">
+                Name:
+              </label>
+              <p id="name" className="my-account__value">
+                {client.nombre} {client.apellido}
+              </p>
+            </div>
+            <div className="my-account__user-detail">
+              <label htmlFor="email" className="my-account__label">
+                Email:
+              </label>
+              <p id="email" className="my-account__value">
+                {client.email}
+              </p>
+            </div>
+            <div className="my-account__user-detail">
+              <label htmlFor="age" className="my-account__label">
+                Age:
+              </label>
+              <p id="age" className="my-account__value">
+                {client.edad}
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="my-account__orders">
-        <h2 className="my-account__section-title">My Orders</h2>
-        {orders.length > 0 ? (
-          <div className="my-account__orders-list">
-            {orders.map((order) => (
-              <div key={order.id} className="my-account__order">
-                <p className="my-account__order-id">Order ID: {order.id}</p>
-                <p className="my-account__order-date">
-                  Order Date: {order.date}
-                </p>
-                <p className="my-account__order-total">
-                  Order Total: {order.total}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="my-account__no-orders">No orders found</p>
-        )}
-      </div>
+      ) : (
+        <p>Loading client data...</p>
+      )}
+      // Your MyAccount component JSX here
     </div>
   );
 }
-
-export default MyAccount;
