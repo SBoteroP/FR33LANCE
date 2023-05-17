@@ -3,7 +3,7 @@ import { useAuth } from "../context/authContext";
 import { Link } from "react-router-dom";
 
 export function Home() {
-  const { user, logout, loading } = useAuth();
+  const { logout, loading } = useAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
@@ -25,7 +25,7 @@ export function Home() {
       <header className="flex justify-end items-center py-7 bg-teal-800">
         <div className="w-screen">
           <div className="flex justify-center mt-4">
-            <a href="#" className="text-gray-500 hover:text-blue-500 mx-2">
+            <a className="text-gray-500 hover:text-blue-500 mx-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -119,13 +119,13 @@ export function Home() {
               </button>
             </div>
             <div className="flex justify-center mt-4">
-              <a href="#" className="text-white hover:text-blue-500 mx-2">
+              <a className="text-white hover:text-blue-500 mx-2">
                 Terminos y Condiciones
               </a>
-              <a href="#" className="text-white hover:text-blue-500 mx-2">
+              <a className="text-white hover:text-blue-500 mx-2">
                 ¿Quienes somos?
               </a>
-              <a href="#" className="text-white hover:text-blue-500 mx-2">
+              <a className="text-white hover:text-blue-500 mx-2">
                 Contáctanos
               </a>
             </div>

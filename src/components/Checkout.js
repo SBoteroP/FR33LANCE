@@ -4,15 +4,11 @@ import { useAuth } from "../context/authContext";
 import { useLocation } from "react-router-dom";
 
 export function Checkout() {
-  const { user } = useAuth();
   const navigate = useNavigate();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("creditCard");
-  const [cardNumber, setCardNumber] = useState("");
-  const [cardExpDate, setCardExpDate] = useState("");
-  const [cardCVV, setCardCVV] = useState("");
   const { state } = useLocation();
   const { total } = state || {};
 

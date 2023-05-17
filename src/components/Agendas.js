@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { useNavigate, Link, useLocation } from "react-router-dom";
-import { useAuth } from "../context/authContext";
-import ReactDOM from "react-dom";
+import { useNavigate } from "react-router-dom";
 import React from "react";
 
 export function Agendas() {

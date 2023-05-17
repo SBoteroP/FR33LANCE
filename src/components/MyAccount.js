@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export function MyAccount() {
@@ -16,6 +16,25 @@ export function MyAccount() {
       setOrders(userOrders);
     });
   }, []);*/
+  // Example API calls to set user and orders
+  const funcionRelleno = () => {
+    // Simulating API call to get user details
+    setTimeout(() => {
+      const userDetails = { name: "John Doe", email: "john@example.com" };
+      setUser(userDetails);
+    }, 1000);
+
+    // Simulating API call to get user orders
+    setTimeout(() => {
+      const userOrders = [
+        { id: 1, date: "2023-05-17", total: 100 },
+        { id: 2, date: "2023-05-16", total: 150 },
+      ];
+      setOrders(userOrders);
+    }, 2000);
+  };
+
+  console.log(funcionRelleno);
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
