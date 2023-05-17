@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export function MyAccount() {
   const [user, setUser] = useState({});
@@ -17,65 +18,59 @@ export function MyAccount() {
   }, []);*/
 
   return (
-    <div className="my-account">
-      <h1 className="my-account__title">My Account</h1>
-      <div className="my-account__user-details">
-        <h2 className="my-account__section-title">User Details</h2>
-        <div className="my-account__user-details-grid">
-          <div className="my-account__user-detail">
-            <label htmlFor="name" className="my-account__label">
-              Name:
-            </label>
-            <p id="name" className="my-account__value">
-              {user.name}
-            </p>
-          </div>
-          <div className="my-account__user-detail">
-            <label htmlFor="email" className="my-account__label">
-              Email:
-            </label>
-            <p id="email" className="my-account__value">
-              {user.email}
-            </p>
-          </div>
-          <div className="my-account__user-detail">
-            <label htmlFor="address" className="my-account__label">
-              Address:
-            </label>
-            <p id="address" className="my-account__value">
-              {user.address}
-            </p>
-          </div>
-          <div className="my-account__user-detail">
-            <label htmlFor="phone" className="my-account__label">
-              Phone:
-            </label>
-            <p id="phone" className="my-account__value">
-              {user.phone}
-            </p>
+    <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
+      <div className="bg-white rounded-lg p-8 max-w-2xl">
+        <h1 className="text-3xl font-bold mb-6">My Account</h1>
+
+        <Link
+          to="/"
+          className="mb-4 text-white bg-blue-500 py-2 px-4 rounded-md hover:bg-gray-400 inline-block"
+        >
+          Atras
+        </Link>
+
+        <div className="mb-8">
+          <h2 className="text-2xl font-semibold mb-4">User Details</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <Detail label="Name" value={user.name} />
+            <Detail label="Email" value={user.email} />
+            <Detail label="Address" value={user.address} />
+            <Detail label="Phone" value={user.phone} />
           </div>
         </div>
+
+        <div>
+          <h2 className="text-2xl font-semibold mb-4">My Orders</h2>
+          {orders.length > 0 ? (
+            <div className="space-y-4">
+              {orders.map((order) => (
+                <OrderItem key={order.id} order={order} />
+              ))}
+            </div>
+          ) : (
+            <p className="text-gray-600">No orders found</p>
+          )}
+        </div>
       </div>
-      <div className="my-account__orders">
-        <h2 className="my-account__section-title">My Orders</h2>
-        {orders.length > 0 ? (
-          <div className="my-account__orders-list">
-            {orders.map((order) => (
-              <div key={order.id} className="my-account__order">
-                <p className="my-account__order-id">Order ID: {order.id}</p>
-                <p className="my-account__order-date">
-                  Order Date: {order.date}
-                </p>
-                <p className="my-account__order-total">
-                  Order Total: {order.total}
-                </p>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="my-account__no-orders">No orders found</p>
-        )}
-      </div>
+    </div>
+  );
+}
+
+function Detail({ label, value }) {
+  return (
+    <div className="flex items-center">
+      <label className="mr-2 font-medium">{label}:</label>
+      <p className="text-gray-600">{value}</p>
+    </div>
+  );
+}
+
+function OrderItem({ order }) {
+  return (
+    <div>
+      <p className="text-lg font-medium">Order ID: {order.id}</p>
+      <p className="text-gray-600">Order Date: {order.date}</p>
+      <p className="text-gray-600">Order Total: {order.total}</p>
     </div>
   );
 }

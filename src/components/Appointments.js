@@ -11,42 +11,17 @@ export function Appointments({ clientId }) {
   }, [clientId]);
 
   return (
-    <div
-      style={{
-        height: "50%",
-        width: "50%",
-        backgroundColor: "#00a0a0",
-        padding: "20px",
-        maxWidth: "600px",
-        margin: "0 auto",
-      }}
-    >
-      <h2
-        style={{
-          marginBottom: "20px",
-          textAlign: "center",
-          fontWeight: "bold",
-          fontSize: "32px",
-          textTransform: "uppercase",
-        }}
-      >
-        Citas
-      </h2>
+    <div className="h-1/2 w-1/2 bg-teal-500 p-20 max-w-600 mx-auto">
+      <h2 className="mb-20 text-center font-bold text-4xl uppercase">Citas</h2>
 
       {appointments.length === 0 && (
-        <p style={{ fontStyle: "italic" }}>
-          No appointments found for this client.
-        </p>
+        <p className="italic">No appointments found for this client.</p>
       )}
+
       {appointments.map((appointment) => (
         <div
           key={appointment.id}
-          style={{
-            marginBottom: "10px",
-            border: "1px solid #ccc",
-            padding: "10px",
-            borderRadius: "5px",
-          }}
+          className="mb-10 border border-gray-300 p-10 rounded-md"
         >
           <p>
             <strong>Fecha:</strong> {appointment.date}
