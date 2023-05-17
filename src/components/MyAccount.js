@@ -1,55 +1,64 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, Navigate, useNavigate } from "react-router-dom";
+import { getDocs, collection, where, query } from "firebase/firestore";
+import { db } from "../firebase";
+import { useAuth } from "../context/authContext";
 
 export function MyAccount() {
-  const [user, setUser] = useState({});
-  const [orders, setOrders] = useState([]);
+  /*const { currentUser } = useAuth();
+  const [client, setClient] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
-  /*useEffect(() => {
-    // Call API to get user details
-    getUserDetails().then((userDetails) => {
-      setUser(userDetails);
-    });
+  useEffect(() => {
+    const getclientes = async () => {
+      const q = query(
+        collection(db, "clientes"),
+        where("uid", "==", currentUser?.uid)
+      );
+      const querySnapshot = await getDocs(q);
+      if (!querySnapshot.empty) {
+        const doc = querySnapshot.docs[0];
+        setClient(doc.data());
+      }
+      setLoading(false);
+    };
+    if (currentUser) {
+      getclientes();
+    } else {
+      setLoading(false);
+    }
+  }, [currentUser]);
 
-    // Call API to get user orders
-    getUserOrders().then((userOrders) => {
-      setOrders(userOrders);
-    });
-  }, []);*/
+  if (loading) {
+    return <p>Loading...</p>;
+  }
 
+  if (!client) {
+    return <Navigate to="/login" />;
+  }
+*/
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50">
-      <div className="bg-white rounded-lg p-8 max-w-2xl">
-        <h1 className="text-3xl font-bold mb-6">My Account</h1>
-
-        <Link
-          to="/"
-          className="mb-4 text-white bg-blue-500 py-2 px-4 rounded-md inline-block"
-        >
-          Atras
-        </Link>
-
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">User Details</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <Detail label="Name" value={user.name} />
-            <Detail label="Email" value={user.email} />
-            <Detail label="Address" value={user.address} />
-            <Detail label="Phone" value={user.phone} />
+      <div className="bg-white rounded-lg p-8 max-w-2xl flex flex-col justify-between">
+        <div>
+          <h1 className="text-3xl font-bold mb-6">Mi Cuenta</h1>
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Detalles de Usuario</h2>
+            <div className="grid grid-cols-2 gap-4">
+              <Detail label="Nombre" value="Juancho" />
+              <Detail label="Apellido" value="Naipes" />
+              <Detail label="Email" value="bajuan00@gmail.com" />
+            </div>
           </div>
         </div>
-
         <div>
-          <h2 className="text-2xl font-semibold mb-4">My Orders</h2>
-          {orders.length > 0 ? (
-            <div className="space-y-4">
-              {orders.map((order) => (
-                <OrderItem key={order.id} order={order} />
-              ))}
-            </div>
-          ) : (
-            <p className="text-gray-600">No orders found</p>
-          )}
+          <Link
+            to="/"
+            className="text-white bg-blue-500 py-2 px-4 rounded-md inline-block ml-auto mb-4"
+          >
+            Atras
+          </Link>
         </div>
       </div>
     </div>
