@@ -60,6 +60,15 @@ export function Home() {
           >
             Logout
           </button>
+          <i className="material-icons text-gray-500 absolute top-4 left-1 px-4 py-2 rounded-lg transition-all mx-8 my-2">
+            account_box
+          </i>
+          <Link
+            to="/myaccount"
+            className="absolute top-4 left-4 px-4 py-2 bg-teal-500 text-white font-semibold rounded-lg hover:bg-blue-500 transition-all mx-16 my-2"
+          >
+            Mi Cuenta
+          </Link>
         </div>
       </header>
 
@@ -73,7 +82,7 @@ export function Home() {
 
       {/*Buttons*/}
       <section className=" h-auto flex justify-center items-center py-32 bg-teal-800">
-        <div className=" bg-green-900 px-12 py-12">
+        <div className=" bg-teal-800 px-12 py-12">
           <Link
             to="/servicios"
             className="bg-gradient-to-r from-green-700 to-green-400 text-white py-12 px-8 rounded-full text-3xl font-bold shadow-lg"
@@ -86,14 +95,15 @@ export function Home() {
           >
             Registrar servicio
           </Link>
-          
+
           <Link to="/Informacion">
-  <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-4 px-8 rounded-full text-3xl font-bold shadow-lg ml-8">
-    Sugerencias
-  </button>
-</Link>
+            <button className="bg-gradient-to-r from-blue-600 to-blue-500 text-white py-12 px-8 rounded-full text-3xl font-bold shadow-lg ml-8">
+              Sugerencias
+            </button>
+          </Link>
         </div>
       </section>
+
       {/*Footer*/}
       <footer className="bg-teal-900   py-24">
         <div className="w-auto">
@@ -110,13 +120,13 @@ export function Home() {
             </div>
             <div className="flex justify-center mt-4">
               <a href="#" className="text-white hover:text-blue-500 mx-2">
-                Terms of Service
+                Terminos y Condiciones
               </a>
               <a href="#" className="text-white hover:text-blue-500 mx-2">
-                Privacy Policy
+                ¿Quienes somos?
               </a>
               <a href="#" className="text-white hover:text-blue-500 mx-2">
-                Contact
+                Contáctanos
               </a>
             </div>
           </div>
