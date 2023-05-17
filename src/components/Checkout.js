@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../context/authContext";
 import { useLocation } from "react-router-dom";
 
 export function Checkout() {

@@ -25,7 +25,7 @@ export function Home() {
       <header className="flex justify-end items-center py-7 bg-teal-800">
         <div className="w-screen">
           <div className="flex justify-center mt-4">
-            <a className="text-gray-500 hover:text-blue-500 mx-2">
+            <button className="text-gray-500 hover:text-blue-500 mx-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -40,7 +40,7 @@ export function Home() {
                   d="M4 6h16M4 12h16m-7 6h7"
                 ></path>
               </svg>
-            </a>
+            </button>
           </div>
           <i className="material-icons text-gray-500 absolute top-4 right-16 px-4 py-2 rounded-lg transition-all mx-44 my-2 mr-34">
             event
@@ -119,15 +119,15 @@ export function Home() {
               </button>
             </div>
             <div className="flex justify-center mt-4">
-              <a className="text-white hover:text-blue-500 mx-2">
+              <button className="text-white hover:text-blue-500 mx-2">
                 Terminos y Condiciones
-              </a>
-              <a className="text-white hover:text-blue-500 mx-2">
+              </button>
+              <button className="text-white hover:text-blue-500 mx-2">
                 ¿Quienes somos?
-              </a>
-              <a className="text-white hover:text-blue-500 mx-2">
+              </button>
+              <button className="text-white hover:text-blue-500 mx-2">
                 Contáctanos
-              </a>
+              </button>
             </div>
           </div>
         </div>
