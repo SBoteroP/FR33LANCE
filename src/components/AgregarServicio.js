@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import { doc, setDoc } from "firebase/firestore";
 
 
-export const Agregar_servicio = () => {
+export const AgregarServicio = () => {
   const [values, setValues] = useState({
     servicio: "",
     nombre: "",

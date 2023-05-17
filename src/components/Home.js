@@ -90,7 +90,7 @@ export function Home() {
             Servicios
           </Link>
           <Link
-            to="/agregar_servicio"
+            to="/agregarservicio"
             className="bg-gradient-to-r from-purple-700 to-purple-500 text-white py-12 px-8 rounded-full text-3xl font-bold shadow-lg ml-8"
           >
             Registrar servicio
